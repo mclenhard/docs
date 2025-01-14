@@ -28,7 +28,8 @@
   "tabs": [
     {
       "name": "API Reference",
-      "url": "api-reference"
+      "url": "api-reference",
+      "openapi": "/api-reference/openapi.json"
     }
   ],
   "anchors": [
@@ -47,7 +48,6 @@
       "icon": "newspaper",
       "url": "https://mintlify.com/blog"
     },
-   "openapi": "/api-reference/openapi.json",
   ],
   "navigation": [
     {
