@@ -1,33 +1,24 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: 'GPT Scraper API'
+description: 'GPT Scraper API endpoints'
 ---
-
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
 
 ## Welcome
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
-
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+##Introduction
+Our API enables seamless communication and data exchange between your application and SearchGPT. By leveraging our API, you can automate the retrieval of SearchGPT data and enhance the functionality of your application.
 
 ## Authentication
+All API requests must be authenticated using your API key. Include your API key in the request header as follows: `Authorization: Bearer YOUR_API_KEY`
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+## Rate Limiting
+While in Beta, we are currently limiting requests to 200 per hour. This will be gradually lifted over time.
 
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
-```
+## Response Times
+Because of the nature of searchGPT's text-generation responses may take up to 60 seconds.
+
+## Caching
+Results are cached for two hours.
+
+## Error Handling
+If an error occurs, the API will return an appropriate error code and message.
