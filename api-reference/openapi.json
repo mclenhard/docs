@@ -3,7 +3,7 @@
   "info": {
     "title": "GPT Scrape API",
     "version": "1.0.0",
-    "description": "API for scraping ChatGPT responses"
+    "description": "API for scraping searchGPT responses"
   },
   "servers": [
     {
@@ -14,8 +14,8 @@
   "paths": {
     "/scrape": {
       "post": {
-        "summary": "Scrape ChatGPT response",
-        "description": "Attempts to scrape ChatGPT response using available account sessions",
+        "summary": "Scrape searchGPT response",
+        "description": "Attempts to scrape searchGPT response using available account sessions",
         "operationId": "run",
         "requestBody": {
           "required": true,
@@ -26,7 +26,7 @@
                 "properties": {
                   "query": {
                     "type": "string",
-                    "description": "The query to send to ChatGPT"
+                    "description": "The query to send to searchGPT"
                   }
                 },
                 "required": ["query"]
@@ -44,7 +44,7 @@
                   "properties": {
                     "content": {
                       "type": "string",
-                      "description": "The main content response from ChatGPT"
+                      "description": "The main content response from searchGPT"
                     },
                     "contentLinks": {
                       "type": "array",
@@ -78,7 +78,7 @@
                           }
                         }
                       },
-                      "description": "Sources referenced by ChatGPT"
+                      "description": "Sources referenced by searchGPT"
                     }
                   }
                 }
