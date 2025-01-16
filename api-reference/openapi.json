@@ -15,7 +15,7 @@
     "/searchgpt/scrape": {
       "post": {
         "summary": "Scrape searchGPT response",
-        "description": "Attempts to scrape searchGPT response using available account sessions",
+        "description": "Scrape searchGPT",
         "operationId": "run",
         "requestBody": {
           "required": true,
@@ -123,6 +123,7 @@
     "/searchgpt/jobs": {
       "post": {
         "summary": "Create a new search job",
+        "description": "Currently in Beta, contact support to get access",
         "requestBody": {
           "required": true,
           "content": {
@@ -184,6 +185,7 @@
     "/searchgpt/jobs/{jobId}": {
       "get": {
         "summary": "Get job details by ID",
+        "description": "Currently in Beta, contact support to get access",
         "parameters": [
           {
             "in": "path",
