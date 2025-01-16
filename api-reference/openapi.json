@@ -12,7 +12,7 @@
     }
   ],
   "paths": {
-    "/searchgpt/scrape": {
+    "/searchgpt": {
       "post": {
         "summary": "Scrape searchGPT response",
         "description": "Scrape searchGPT",
