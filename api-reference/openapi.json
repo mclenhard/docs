@@ -156,6 +156,10 @@
                     "jobId": {
                       "type": "string",
                       "description": "Unique identifier for the created job"
+                    },
+                    "success":{
+                      "type": "boolean",
+                      "description": "Whether the job was created successfully"
                     }
                   },
                   "required": ["jobId"]
@@ -207,45 +211,74 @@
                   "properties": {
                     "status": {
                       "type": "string",
+                      "enum": ["processing", "completed"],
                       "description": "The status of the job"
                     },
-                    "content": {
+                    "query": {
                       "type": "string",
-                      "description": "The main content response from searchGPT"
+                      "description": "The original search query"
                     },
-                    "contentLinks": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "url": {
-                            "type": "string",
-                            "description": "URL of the link"
-                          },
-                          "text": {
-                            "type": "string",
-                            "description": "Text content of the link"
-                          }
-                        }
-                      },
-                      "description": "Links found within the content"
+                    "screenshot": {
+                      "type": "boolean",
+                      "description": "Whether a screenshot was requested"
                     },
-                    "sources": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "url": {
-                            "type": "string",
-                            "description": "URL of the source"
+                    "results": {
+                      "type": "object",
+                      "nullable": true,
+                      "properties": {
+                        "content": {
+                          "type": "string",
+                          "description": "The main content response from searchGPT"
+                        },
+                        "contentLinks": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "url": {
+                                "type": "string",
+                                "description": "URL of the link"
+                              },
+                              "text": {
+                                "type": "string",
+                                "description": "Text content of the link"
+                              }
+                            }
                           },
-                          "title": {
-                            "type": "string",
-                            "description": "Title of the source"
-                          }
+                          "description": "Links found within the content"
+                        },
+                        "sources": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "url": {
+                                "type": "string",
+                                "description": "URL of the source"
+                              },
+                              "title": {
+                                "type": "string",
+                                "description": "Title of the source"
+                              }
+                            }
+                          },
+                          "description": "Sources referenced by searchGPT"
+                        },
+                        "screenshotUrl": {
+                          "type": "string",
+                          "description": "URL of the captured screenshot"
                         }
-                      },
-                      "description": "Sources referenced by searchGPT"
+                      }
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "Timestamp when the job was created"
+                    },
+                    "updatedAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "Timestamp when the job was last updated"
                     }
                   }
                 }
