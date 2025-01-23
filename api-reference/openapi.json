@@ -27,6 +27,14 @@
                   "query": {
                     "type": "string",
                     "description": "The query to send to searchGPT"
+                  },                 
+                  "screenshot": {
+                    "type": "boolean",
+                    "description": "Whether to capture a screenshot of the search results"
+                  },
+                  "country": {
+                    "type": "string",
+                    "description": "Country code in ISO 3166-1 alpha-2 format"
                   }
                 },
                 "required": ["query"]
@@ -138,6 +146,10 @@
                   "screenshot": {
                     "type": "boolean",
                     "description": "Whether to capture a screenshot of the search results"
+                  },
+                  "country": {
+                    "type": "string",
+                    "description": "Country code in ISO 3166-1 alpha-2 format"
                   }
                 },
                 "required": ["query", "screenshot"]
