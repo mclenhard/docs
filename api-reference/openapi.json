@@ -131,7 +131,7 @@
     "/searchgpt/jobs": {
       "post": {
         "summary": "Create a new search job",
-        "description": "Currently in Beta, contact support to get access",
+        "description": "Submit a query to be scraped",
         "requestBody": {
           "required": true,
           "content": {
@@ -201,7 +201,7 @@
     "/searchgpt/jobs/{jobId}": {
       "get": {
         "summary": "Get job details by ID",
-        "description": "Currently in Beta, contact support to get access",
+        "description": "Get job details by ID",
         "parameters": [
           {
             "in": "path",
