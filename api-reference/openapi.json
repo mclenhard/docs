@@ -322,6 +322,14 @@
     }
   },
   "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "API key",
+        "description": "Enter your API key in the format: Bearer <YOUR_API_KEY>"
+      }
+    },
     "schemas": {
       "Error": {
         "type": "object",
@@ -333,5 +341,10 @@
         "required": ["error"]
       }
     }
-  }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ]
 }
