@@ -271,6 +271,14 @@
                               "title": {
                                 "type": "string",
                                 "description": "Title of the source"
+                              },
+                              "sourceName": {
+                                "type": "string",
+                                "description": "Name of the source site"
+                              },
+                              "description": {
+                                "type": "string",
+                                "description": "Description text of the source"
                               }
                             }
                           },
