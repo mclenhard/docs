@@ -116,61 +116,69 @@
                     },
                     "screenshot": {
                       "type": "boolean",
+                      "nullable": true,
                       "description": "Whether a screenshot was requested"
                     },
                     "results": {
                       "type": "object",
                       "nullable": true,
                       "properties": {
-                        "content": {
+                        "status": {
+                          "type": "string",
+                          "description": "Status of the search result"
+                        },
+                        "result": {
                           "type": "string",
                           "description": "The main content response from searchGPT"
                         },
-                        "contentLinks": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string",
-                                "description": "URL of the link"
+                        "metadata": {
+                          "type": "object",
+                          "properties": {
+                            "prompt": {
+                              "type": "string",
+                              "description": "The original prompt used for the search"
+                            },
+                            "model": {
+                              "type": "string",
+                              "description": "The model used to generate the response"
+                            },
+                            "language": {
+                              "type": "string",
+                              "description": "The language of the response"
+                            },
+                            "citations": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "url": {
+                                    "type": "string",
+                                    "description": "URL of the citation"
+                                  },
+                                  "title": {
+                                    "type": "string",
+                                    "description": "Title of the citation"
+                                  }
+                                }
                               },
-                              "text": {
-                                "type": "string",
-                                "description": "Text content of the link"
-                              }
+                              "description": "Citations referenced in the response"
+                            },
+                            "urls": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              },
+                              "description": "URLs referenced in the response"
+                            },
+                            "finish_reason": {
+                              "type": "string",
+                              "description": "Reason why the generation finished"
+                            },
+                            "search_enabled": {
+                              "type": "boolean",
+                              "description": "Whether search was enabled for this query"
                             }
-                          },
-                          "description": "Links found within the content"
-                        },
-                        "sources": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "properties": {
-                              "url": {
-                                "type": "string",
-                                "description": "URL of the source"
-                              },
-                              "title": {
-                                "type": "string",
-                                "description": "Title of the source"
-                              },
-                              "sourceName": {
-                                "type": "string",
-                                "description": "Name of the source site"
-                              },
-                              "description": {
-                                "type": "string",
-                                "description": "Description text of the source"
-                              }
-                            }
-                          },
-                          "description": "Sources referenced by searchGPT"
-                        },
-                        "screenshotUrl": {
-                          "type": "string",
-                          "description": "URL of the captured screenshot"
+                          }
                         }
                       }
                     },
